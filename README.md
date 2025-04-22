@@ -17,12 +17,12 @@ All Rights Reserved By NGUBE INGRID CAROLE
 
 ---
 
- 🛠️ Technologies utilisées
+ ## 🛠️ Technologies utilisées
 
 - **HTML / CSS / Bootstrap**
 - **PHP 7+**
 - **MySQL**
-- **JavaScript **
+- **JavaScript**
 - **FontAwesome** (pour les icônes)
 - **Git / GitHub**
 
