@@ -27,7 +27,7 @@ if (!isset($_SESSION['user_id'])) {
   <!-- bootstrap core css -->
   <link rel="stylesheet" type="text/css" href="bootstrap.css" />
   <!-- font awesome style -->
-  <link href="css/font-awesome.min.css" rel="stylesheet" />
+  <link href="font-awesome.min.css" rel="stylesheet" />
   <!-- Custom styles for this template -->
   <link href="style.css" rel="stylesheet" />
   <!-- responsive style -->
