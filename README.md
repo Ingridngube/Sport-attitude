@@ -1,24 +1,36 @@
-🏀 Sport Attitude - Site de vente d’équipements sportifs
-Bienvenue sur Sport Attitude, un site e-commerce dédié à la vente d'équipements de sport pour tous les passionnés : football, fitness, musculation et bien plus encore !
+# 🏀 Sport Attitude - Site de vente d’équipements sportifs
+
+Bienvenue sur **Sport Attitude**, un site e-commerce dédié à la vente d'équipements de sport pour tous les passionnés : football, fitness, musculation et bien plus encore !
+
 
 All Rights Reserved By NGUBE INGRID CAROLE
-🚀 Fonctionnalités principales
-🛒 Gestion de panier
-🎁 Application de codes promo
-📦 Affichage dynamique des produits
-🔍 Navigation simple et responsive
-🧾 Calcul du total avec ou sans réduction
-🧑‍💻 Back-end en PHP avec base de données MySQL
-🛠️ Technologies utilisées
+---
 
-🛠️ Technologies utilisées
-HTML / CSS / Bootstrap
-PHP 7+
-MySQL
-JavaScript
-FontAwesome (pour les icônes)
-Git / GitHub
-📂 Structure du projet
+## 🚀 Fonctionnalités principales
+
+- 🛒 **Gestion de panier**
+- 🎁 **Application de codes promo**
+- 📦 **Affichage dynamique des produits**
+- 🔍 **Navigation simple et responsive**
+- 🧾 **Calcul du total avec ou sans réduction**
+- 🧑‍💻 **Back-end en PHP avec base de données MySQL**
+
+---
+
+ 🛠️ Technologies utilisées
+
+- **HTML / CSS / Bootstrap**
+- **PHP 7+**
+- **MySQL**
+- **JavaScript **
+- **FontAwesome** (pour les icônes)
+- **Git / GitHub**
+
+---
+
+## 📂 Structure du projet
+
+```bash
 .
 ├── inscription.php        # Page d'inscription/connexion
 ├── index.php             # Page d'accueil
@@ -37,5 +49,4 @@ Git / GitHub
 ├── javascript-login.js
 │── js/
 │── images/
-└── README.md# Sport-attitude
-Sport attitude est un site web de vente d'équipement et accessoire de sport
+└── README.md
