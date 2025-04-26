@@ -37,7 +37,7 @@
      <header class="header_section innerpage_header">
     <div class="container-fluid">
       <nav class="navbar navbar-expand-lg custom_nav-container">
-        <a class="navbar-brand" href="index.php">
+        <a class="navbar-brand" href="index2.php">
           <span>
             Sport Attitude
           </span>
@@ -107,26 +107,26 @@ color: #007bff;
 }</style>
           <ul class="navbar-nav  ">
             <li class="nav-item active">
-              <a class="nav-link" href="index.php">Accueil <span class="sr-only">(current)</span></a>
+              <a class="nav-link" href="index2.php">Accueil <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="shop.php">
+              <a class="nav-link" href="shop22.php">
                 Boutique
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="about.php">
+              <a class="nav-link" href="about2.php">
                 A propos
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="blog.php">
+              <a class="nav-link" href="blog2.php">
                 Blog
               </a>
             </li>
           </ul>
           <div class="user_option">
-            <a href="panier.php">
+            <a href="panier2.php">
               <i class="fa fa-shopping-bag" aria-hidden="true"><span><?=array_sum($_SESSION['panier'])?></span></i>
             </a>
           </div>
@@ -135,8 +135,8 @@ color: #007bff;
             <i class="fa fa-user" aria-hidden="true"></i>
               <span >  <style type="text/css"> .bienvenue{color: white; margin: 15px 40px;
                 padding: 0;}</style>
-                <a>Bienvenue, <?= htmlspecialchars($_SESSION['Nom']) ?> !</a>
-                <a href="index2.php">Se déconnecter</a>
+                <a>Bienvenue, Aucun compte !</a>
+                <a href="inscription.php">Se connecter</a>
               </span>
           </div>
         </div>
@@ -213,7 +213,7 @@ $totalAvecReduction = $total - $reduction;
                                     <td>
                                         <div class="price-wrap"> <var class="Prix"><?=$produit["prix"]?>f</var> </div>
                                     </td>
-                                    <td class="text-right d-none d-md-block"> <a data-original-title="Save to Wishlist" title="" href="" class="btn btn-light" data-toggle="tooltip" data-abc="true"> <i class="fa fa-heart"></i></a> <a href="panier.php?del=<?=$produit["id"]?>" class="btn btn-light" data-abc="true"> supprimer</a> </td>
+                                    <td class="text-right d-none d-md-block"> <a data-original-title="Save to Wishlist" title="" href="" class="btn btn-light" data-toggle="tooltip" data-abc="true"> <i class="fa fa-heart"></i></a> <a href="panier2.php?del=<?=$produit["id"]?>" class="btn btn-light" data-abc="true"> supprimer</a> </td>
                                 </tr>
                                 </tbody>
                                  <?php endforeach ;} ?> 
@@ -250,7 +250,7 @@ $totalAvecReduction = $total - $reduction;
                             <dd class="text-right text-dark b ml-3"><strong><?= number_format($totalAvecReduction, 0, ',', ' ') ?>f</strong></dd>
                         </dl>
                         
-                        <hr> <a href="page_paiement.php" class="btn btn-out btn-primary btn-square btn-main" data-abc="true"> Achat </a> <a href="shop.php" class="btn btn-out btn-success btn-square btn-main mt-2" data-abc="true">Continuer Shopping</a>
+                        <hr> <a href="inscription.php" class="btn btn-out btn-primary btn-square btn-main" data-abc="true"> Achat </a> <a href="shop22.php" class="btn btn-out btn-success btn-square btn-main mt-2" data-abc="true">Continuer Shopping</a>
                     </div>
                 </div>
             </aside>

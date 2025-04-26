@@ -137,7 +137,7 @@ color: #007bff;
               <span >  <style type="text/css"> .bienvenue{color: white; margin: 15px 40px;
                 padding: 0;}</style>
                 <a>Bienvenue, <?= htmlspecialchars($_SESSION['Nom']) ?> !</a>
-                <a href="logout.php">Se déconnecter</a>
+                <a href="index2.php">Se déconnecter</a>
               </span>
           </div>
         </div>

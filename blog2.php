@@ -11,7 +11,7 @@
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <!-- Mobile Metas -->
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
   <!-- Site Metas -->
   <link rel="icon" href="images/u-2.png" type="image/gif" />
   <meta name="keywords" content="" />
@@ -37,7 +37,7 @@
   <header class="header_section innerpage_header">
     <div class="container-fluid">
       <nav class="navbar navbar-expand-lg custom_nav-container">
-        <a class="navbar-brand" href="index.php">
+        <a class="navbar-brand" href="index2.php">
           <span>
             Sport Attitude
           </span>
@@ -107,26 +107,26 @@ color: #007bff;
 }</style>
           <ul class="navbar-nav  ">
             <li class="nav-item active">
-              <a class="nav-link" href="index.php">Accueil <span class="sr-only">(current)</span></a>
+              <a class="nav-link" href="index2.php">Accueil <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="shop.php">
+              <a class="nav-link" href="shop22.php">
                 Boutique
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="about.php">
+              <a class="nav-link" href="about2.php">
                 A propos
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="blog.php">
+              <a class="nav-link" href="blog2.php">
                 Blog
               </a>
             </li>
           </ul>
           <div class="user_option">
-            <a href="panier.php">
+            <a href="panier2.php">
               <i class="fa fa-shopping-bag" aria-hidden="true"><span><?=array_sum($_SESSION['panier'])?></span></i>
             </a>
           </div>
@@ -135,8 +135,8 @@ color: #007bff;
             <i class="fa fa-user" aria-hidden="true"></i>
               <span >  <style type="text/css"> .bienvenue{color: white; margin: 15px 40px;
                 padding: 0;}</style>
-                <a>Bienvenue, <?= htmlspecialchars($_SESSION['Nom']) ?> !</a>
-                <a href="index2.php">Se déconnecter</a>
+                <a>Bienvenue, Aucun compte !</a>
+                <a href="logout.php">Se connecter</a>
               </span>
           </div>
         </div>
@@ -145,69 +145,65 @@ color: #007bff;
   </header>
   <!-- end header section -->
 
-  <!-- shop section -->
+  <!-- blog section -->
 
-  <section class="shop_section layout_padding">
+  <section class="blog_section layout_padding">
     <div class="container">
-      <div class="heading_container heading_center">
+      <div class="heading_container">
         <h2>
-          Dernier produit
+          Latest From Blog
         </h2>
       </div>
       <div class="row">
-        <?php
-      //inclure la page de connexion
-      include_once "con_dbb.php";
-      //afficher la liste des produits
-      $req= mysqli_query($con, "SELECT * FROM articles");
-      while($row=mysqli_fetch_assoc($req)){
-      ?>
-          <div class="col-sm-6 col-md-4 col-lg-3">
-          <div class="box" >
-            <a href="">
-              <div class="img-box">
-                <img src="<?=$row["miniature"]?> ">
-              </div>
-              <div class="detail-box" >
-                <h6>
-                 <?=$row["nom"]?>
-                </h6>
-                <h6>
-                  Prix
-                  <span>
-                   <?=$row["prix"]?>f
-                  </span>
-                </h6>
-              </div>
-              <div class="new">
-                <span>
-                  New
-                </span>
-              </div>
-              <div class="content" >
-                <a href="ajoutpanier.php?id=<?=$row["id"]?>" class="id_product" style="
-  display: inline-block;
-  padding: 5px 10px;
-  background-color: #fd9c6b;
-  color: #ffffff;
-  border-radius: 5px;
-  border: 1px solid #fd9c6b;
-  -webkit-transition: all .2s;
-  transition: all .2s;">Ajouter au panier</a>
-              </div>
-            </a>
+        <div class="col-md-6">
+          <div class="box">
+            <div class="img-box">
+              <img src="images/sport1.avif" alt="">
+              <h4 class="blog_date">
+                14 <br>
+                July
+              </h4>
+            </div>
+            <div class="detail-box">
+              <h5>
+                 Excellente expérience d'achat 
+              </h5>
+              <p>
+                J'ai récemment acheté une paire de chaussures de randonnée et je suis très satisfait de mon expérience. Le site est facile à naviguer, et j'ai pu trouver rapidement ce que je cherchais. La livraison a été rapide, et les chaussures sont conformes à la description. Je recommande vivement ce site pour tous vos besoins en équipement sportif !
+              </p>
+              <a href="">
+                Read More
+              </a>
+            </div>
           </div>
         </div>
-         <?php } ?>
-      <div class="btn-box">
-        <a href="Shop2.php">
-          View All Products
-        </a>
+        <div class="col-md-6">
+          <div class="box">
+            <div class="img-box">
+              <img src="images/sport2.jpeg" alt="">
+              <h4 class="blog_date">
+                15 <br>
+                July
+              </h4>
+            </div>
+            <div class="detail-box">
+              <h5>
+                Site intuitif, mais manque d'informations
+              </h5>
+              <p>
+                Le site est très intuitif et agréable à utiliser. J'ai trouvé facilement les équipements dont j'avais besoin, mais j'aurais aimé avoir plus d'informations sur certaines spécifications des produits. Par exemple, des vidéos explicatives ou des avis d'autres clients pourraient être utiles.
+              </p>
+              <a href="">
+                Read More
+              </a>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
-  
-  <!-- end shop section -->
+
+  <!-- end blog section -->
 
   <!-- info section -->
   <section class="info_section layout_padding2">
@@ -261,13 +257,13 @@ color: #007bff;
               <div class="img-box">
                 <img src="images/images9.jpeg" alt="">
               </div>
-              <p>
+             <p>
                 Appareil de musculation
               </p>
             </div>
             <div class="insta_box">
               <div class="img-box">
-                <img src="images/tenue8.jpeg" alt="">
+                <img src="images/p2.png" alt="">
               </div>
               <p>
                 Ensemble tenue sport homme
@@ -278,10 +274,10 @@ color: #007bff;
         <div class="col-md-6 col-lg-3">
           <div class="info_detail">
             <h4>
-             A propos
+              A propos
             </h4>
             <p class="mb-0">
-              Bienvenue sur Sport Attitude ! Nous sommes passionnés par le sport et dédiés à vous fournir le meilleur équipement pour vous aider à atteindre vos objectifs. Que vous soyez un athlète professionnel ou un amateur, nous avons tout ce qu'il vous faut, des vêtements aux accessoires.
+              Chez Sport Attitude, notre mission est simple : rendre le sport accessible à tous. Nous croyons que chaque personne mérite de se sentir bien dans sa peau et d'atteindre ses performances maximales. C'est pourquoi nous proposons une sélection rigoureuse d'équipements de qualité, adaptés à tous les niveaux.
             </p>
           </div>
         </div>
@@ -321,8 +317,7 @@ color: #007bff;
   <footer class="footer_section">
     <div class="container">
       <p>
-        &copy; <span id="displayYear"></span> All Rights Reserved By
-        <a href="https://html.design/">NGUBE INGRID CALE</a>
+        &copy; <span id="displayYear"></span> All Rights Reserved By NGUBE
       </p>
     </div>
   </footer>

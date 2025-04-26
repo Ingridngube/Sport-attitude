@@ -37,7 +37,7 @@
   <header class="header_section innerpage_header">
     <div class="container-fluid">
       <nav class="navbar navbar-expand-lg custom_nav-container">
-        <a class="navbar-brand" href="index.php">
+        <a class="navbar-brand" href="index2.php">
           <span>
             Sport Attitude
           </span>
@@ -107,26 +107,26 @@ color: #007bff;
 }</style>
           <ul class="navbar-nav  ">
             <li class="nav-item active">
-              <a class="nav-link" href="index.php">Accueil <span class="sr-only">(current)</span></a>
+              <a class="nav-link" href="index2.php">Accueil <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="shop.php">
+              <a class="nav-link" href="shop22.php">
                 Boutique
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="about.php">
+              <a class="nav-link" href="about2.php">
                 A propos
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="blog.php">
+              <a class="nav-link" href="blog2.php">
                 Blog
               </a>
             </li>
           </ul>
           <div class="user_option">
-            <a href="panier.php">
+            <a href="panier2.php">
               <i class="fa fa-shopping-bag" aria-hidden="true"><span><?=array_sum($_SESSION['panier'])?></span></i>
             </a>
           </div>
@@ -135,8 +135,8 @@ color: #007bff;
             <i class="fa fa-user" aria-hidden="true"></i>
               <span >  <style type="text/css"> .bienvenue{color: white; margin: 15px 40px;
                 padding: 0;}</style>
-                <a>Bienvenue, <?= htmlspecialchars($_SESSION['Nom']) ?> !</a>
-                <a href="index2.php">Se déconnecter</a>
+                <a>Bienvenue, Aucun compte !</a>
+                <a href="inscription.php">Se connecter</a>
               </span>
           </div>
         </div>
@@ -185,7 +185,7 @@ color: #007bff;
                 </span>
               </div>
               <div class="content" >
-                <a href="ajoutpanier.php?id=<?=$row["id"]?>" class="id_product" style="
+                <a href="ajoutpanier2.php?id=<?=$row["id"]?>" class="id_product" style="
   display: inline-block;
   padding: 5px 10px;
   background-color: #fd9c6b;
@@ -245,10 +245,10 @@ color: #007bff;
               Menu
             </h4>
             <div class="info_links_menu">
-              <a href="index.php">Home</a>
-              <a href="about.php">About</a>
-              <a href="shop.php">Shop</a>
-              <a href="blog.php">Blog</a>
+              <a href="index2.php">Home</a>
+              <a href="about2.php">About</a>
+              <a href="shop2.php">Shop</a>
+              <a href="blog2.php">Blog</a>
             </div>
           </div>
         </div>

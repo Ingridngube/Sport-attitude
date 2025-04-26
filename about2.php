@@ -11,7 +11,7 @@
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <!-- Mobile Metas -->
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
   <!-- Site Metas -->
   <link rel="icon" href="images/u-2.png" type="image/gif" />
   <meta name="keywords" content="" />
@@ -37,7 +37,7 @@
   <header class="header_section innerpage_header">
     <div class="container-fluid">
       <nav class="navbar navbar-expand-lg custom_nav-container">
-        <a class="navbar-brand" href="index.php">
+        <a class="navbar-brand" href="index2.php">
           <span>
             Sport Attitude
           </span>
@@ -107,26 +107,26 @@ color: #007bff;
 }</style>
           <ul class="navbar-nav  ">
             <li class="nav-item active">
-              <a class="nav-link" href="index.php">Accueil <span class="sr-only">(current)</span></a>
+              <a class="nav-link" href="index2.php">Accueil <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="shop.php">
+              <a class="nav-link" href="shop22.php">
                 Boutique
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="about.php">
+              <a class="nav-link" href="about2.php">
                 A propos
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="blog.php">
+              <a class="nav-link" href="blog2.php">
                 Blog
               </a>
             </li>
           </ul>
           <div class="user_option">
-            <a href="panier.php">
+            <a href="panier2.php">
               <i class="fa fa-shopping-bag" aria-hidden="true"><span><?=array_sum($_SESSION['panier'])?></span></i>
             </a>
           </div>
@@ -135,8 +135,8 @@ color: #007bff;
             <i class="fa fa-user" aria-hidden="true"></i>
               <span >  <style type="text/css"> .bienvenue{color: white; margin: 15px 40px;
                 padding: 0;}</style>
-                <a>Bienvenue, <?= htmlspecialchars($_SESSION['Nom']) ?> !</a>
-                <a href="index2.php">Se déconnecter</a>
+                <a>Bienvenue, Aucun compte !</a>
+                <a href="logout.php">Se connecter</a>
               </span>
           </div>
         </div>
@@ -145,69 +145,36 @@ color: #007bff;
   </header>
   <!-- end header section -->
 
-  <!-- shop section -->
+  <!-- about section -->
 
-  <section class="shop_section layout_padding">
+  <section class="about_section  layout_padding">
     <div class="container">
-      <div class="heading_container heading_center">
-        <h2>
-          Dernier produit
-        </h2>
-      </div>
       <div class="row">
-        <?php
-      //inclure la page de connexion
-      include_once "con_dbb.php";
-      //afficher la liste des produits
-      $req= mysqli_query($con, "SELECT * FROM articles");
-      while($row=mysqli_fetch_assoc($req)){
-      ?>
-          <div class="col-sm-6 col-md-4 col-lg-3">
-          <div class="box" >
+        <div class="col-md-6">
+          <div class="img-box">
+            <img src="images/fitness.jpg" alt="">
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="detail-box">
+            <div class="heading_container">
+              <h2>
+                A propos
+              </h2>
+            </div>
+            <p>
+             Notre équipe est composée d'athlètes, de coachs et d'experts en équipement sportif qui mettent leur expertise à votre service. Nous sommes là pour vous conseiller et vous accompagner dans votre parcours sportif, car votre succès est notre priorité.
+            </p>
             <a href="">
-              <div class="img-box">
-                <img src="<?=$row["miniature"]?> ">
-              </div>
-              <div class="detail-box" >
-                <h6>
-                 <?=$row["nom"]?>
-                </h6>
-                <h6>
-                  Prix
-                  <span>
-                   <?=$row["prix"]?>f
-                  </span>
-                </h6>
-              </div>
-              <div class="new">
-                <span>
-                  New
-                </span>
-              </div>
-              <div class="content" >
-                <a href="ajoutpanier.php?id=<?=$row["id"]?>" class="id_product" style="
-  display: inline-block;
-  padding: 5px 10px;
-  background-color: #fd9c6b;
-  color: #ffffff;
-  border-radius: 5px;
-  border: 1px solid #fd9c6b;
-  -webkit-transition: all .2s;
-  transition: all .2s;">Ajouter au panier</a>
-              </div>
+              Read More
             </a>
           </div>
         </div>
-         <?php } ?>
-      <div class="btn-box">
-        <a href="Shop2.php">
-          View All Products
-        </a>
       </div>
     </div>
   </section>
-  
-  <!-- end shop section -->
+
+  <!-- end about section -->
 
   <!-- info section -->
   <section class="info_section layout_padding2">
@@ -245,10 +212,10 @@ color: #007bff;
               Menu
             </h4>
             <div class="info_links_menu">
-              <a href="index.php">Home</a>
-              <a href="about.php">About</a>
-              <a href="shop.php">Shop</a>
-              <a href="blog.php">Blog</a>
+              <a href="index2.php">Home</a>
+              <a href="about2.php">About</a>
+              <a href="shop2.php">Shop</a>
+              <a href="blog2.php">Blog</a>
             </div>
           </div>
         </div>
@@ -278,7 +245,7 @@ color: #007bff;
         <div class="col-md-6 col-lg-3">
           <div class="info_detail">
             <h4>
-             A propos
+              A propos
             </h4>
             <p class="mb-0">
               Bienvenue sur Sport Attitude ! Nous sommes passionnés par le sport et dédiés à vous fournir le meilleur équipement pour vous aider à atteindre vos objectifs. Que vous soyez un athlète professionnel ou un amateur, nous avons tout ce qu'il vous faut, des vêtements aux accessoires.
@@ -321,8 +288,7 @@ color: #007bff;
   <footer class="footer_section">
     <div class="container">
       <p>
-        &copy; <span id="displayYear"></span> All Rights Reserved By
-        <a href="https://html.design/">NGUBE INGRID CALE</a>
+        &copy; <span id="displayYear"></span> All Rights Reserved By NGUBE
       </p>
     </div>
   </footer>

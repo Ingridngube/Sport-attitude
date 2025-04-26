@@ -28,7 +28,9 @@ try {
                 $_SESSION['Nom'] = $user['Nom'];
                 $_SESSION['Email'] = $user['Email'];
 
-                header("Location: inscription.php");
+                $_SESSION['inscription_success'] = true;
+
+                header("Location: index.php");
                 exit();
             } else {
                 $erreur = "❌ Cet email est déjà utilisé.";
@@ -54,6 +56,7 @@ try {
                     $_SESSION['user_id'] = $user['id'];
                     $_SESSION['Nom'] = $user['Nom'];
                     $_SESSION['Email'] = $user['Email'];
+
 
                     header("Location: index.php");
                     exit();
@@ -131,8 +134,12 @@ try {
     </div>
 </div>
 
+
+
 <!-- partial -->
   <script src="./javascript-login.js"></script>
+  <script src="js/script_login.js"></script>
+
 
 </body>
 </html>

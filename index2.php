@@ -1,13 +1,11 @@
 <?php
 session_start();
-$showPopup = false;
-
-if (isset($_SESSION['inscription_success']) && $_SESSION['inscription_success'] === true) {
-    $showPopup = true;
-    unset($_SESSION['inscription_success']); // ⚡ Effacer juste après
+include_once "con_dbb.php";
+if (!isset($_SESSION['user_id'])) {
+    header("Location: index.php");
+    exit();
 }
 ?>
-
 <!DOCTYPE html>
 <html>
 
@@ -35,60 +33,14 @@ if (isset($_SESSION['inscription_success']) && $_SESSION['inscription_success'] 
   <link href="responsive.css" rel="stylesheet" />
 
 </head>
-<script>
-function showPopup() {
-    document.getElementById('popup-coupon').style.display = 'flex';
-}
-
-function closePopup() {
-    document.getElementById('popup-coupon').style.display = 'none';
-}
-
-window.onload = function() {
-    // Si PHP a dit de montrer le popup (après inscription)
-    <?php if ($showPopup): ?>
-    showPopup();
-    <?php endif; ?>
-
-    // OU si un paramètre URL "success=1" existe (si tu veux garder cette option aussi)
-    const urlParams = new URLSearchParams(window.location.search);
-    if (urlParams.get('success') === '1') {
-        showPopup();
-    }
-};
-</script>
-
 
 <body>
-         <!-- Pop-up caché au départ -->
-<div id="popup-coupon" style="display: none; position: fixed; top: 0; left: 0; 
-width: 100%; height: 100%; background-color: rgba(0,0,0,0.5); 
-z-index: 1000; display: flex; align-items: center; justify-content: center;">
   
-  <div style="background: white; padding: 20px; border-radius: 10px; text-align: center;">
-    <h2>🎉 Félicitations <?= htmlspecialchars($_SESSION['Nom']) ?> !!</h2>
-    <p>Nous sommes ravis de vous confirmer la création de votre compte sur notre plateforme ! 🎉</p>
-
-<p>Pour vous remercier de votre inscription, nous avons le plaisir de vous offrir des promotions exclusives :</p>
-
-<h1> Offres Promotionnelles :</h1>
-<p>- 25% de réduction sur votre première commande</p>
-
-<h1>Code Promo :</h1>
-Utilisez le code <h3 style="color: #ff6600;">BIENVENUE25</h3> 
-
-Merci de faire partie de notre communauté !
-
-<p>Cordialement</p>
-    <button onclick="closePopup()" style="margin-top: 20px; padding: 10px 20px; background: #28a745; color: white; border: none; border-radius: 5px;">Fermer</button>
-  </div>
-</div>
-
   <!-- header section strats -->
   <header class="header_section">
     <div class="container-fluid">
       <nav class="navbar navbar-expand-lg custom_nav-container">
-        <a class="navbar-brand" href="index.php">
+        <a class="navbar-brand" href="index2.php">
           <span>
             Sport Attitude
           </span>
@@ -155,26 +107,26 @@ a:focus {
 }</style>
           <ul class="navbar-nav  ">
             <li class="nav-item active">
-              <a class="nav-link" href="index.php">Accueil <span class="sr-only">(current)</span></a>
+              <a class="nav-link" href="index2.php">Accueil <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="shop.php">
+              <a class="nav-link" href="shop22.php">
                 Boutique
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="about.php">
+              <a class="nav-link" href="about2.php">
                 A propos
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="blog.php">
+              <a class="nav-link" href="blog2.php">
                 Blog
               </a>
             </li>
           </ul>
           <div class="user_option">
-            <a href="panier.php">
+            <a href="panier2.php">
               <i class="fa fa-shopping-bag" aria-hidden="true"><span><?=array_sum($_SESSION['panier'])?></span></i>
             </a>
           </div>
@@ -183,8 +135,8 @@ a:focus {
             <i class="fa fa-user" aria-hidden="true"></i>
               <span >  <style type="text/css"> .bienvenue{color: white; margin: 15px 40px;
                 padding: 0;}</style>
-                <a>Bienvenue, <?= htmlspecialchars($_SESSION['Nom']) ?> !</a>
-                <a href="index2.php">Se déconnecter</a>
+                <a>Bienvenue, Aucun compte !</a>
+                <a href="inscription.php">Se connecter</a>
               </span>
           </div>
       </nav>
@@ -260,7 +212,7 @@ a:focus {
                 </span>
               </div>
                <div class="content" >
-                <a href="ajoutpanier.php?id=<?=$row["id"]?>" class="id_product" style="margin-top: 30px; margin-bottom: 5px;
+                <a href="ajoutpanier2.php?id=<?=$row["id"]?>" class="id_product" style="margin-top: 30px; margin-bottom: 5px;
   display: inline-block;
   padding: 5px 10px;
   background-color: #fd9c6b;
@@ -304,7 +256,7 @@ a:focus {
             <p>
               Bienvenue sur Sport Attitude ! Nous sommes passionnés par le sport et dédiés à vous fournir le meilleur équipement pour vous aider à atteindre vos objectifs. Que vous soyez un athlète professionnel ou un amateur, nous avons tout ce qu'il vous faut, des vêtements aux accessoires.
             </p>
-            <a href="about.php">
+            <a href="about2.php">
               Read More
             </a>
           </div>
@@ -327,7 +279,7 @@ a:focus {
               <h2>
                 Réduction 10% 
               </h2>
-              <a href="Shop2.php">
+              <a href="Shop22.php">
                 Shop Now
               </a>
             </div>
@@ -340,7 +292,7 @@ a:focus {
               <h2>
                 Réduction 10% 
               </h2>
-              <a href="Shop2.php">
+              <a href="Shop22.php">
                 Shop Now
               </a>
             </div>
@@ -351,7 +303,7 @@ a:focus {
               <h2>
                 Réduction 20%
               </h2>
-              <a href="Shop2.php">
+              <a href="Shop22.php">
                 Shop Now
               </a>
             </div>
@@ -389,7 +341,7 @@ a:focus {
               <p>
                 J'ai récemment acheté une paire de chaussures de randonnée et je suis très satisfait de mon expérience. Le site est facile à naviguer, et j'ai pu trouver rapidement ce que je cherchais. La livraison a été rapide, et les chaussures sont conformes à la description. Je recommande vivement ce site pour tous vos besoins en équipement sportif ! 
               </p>
-              <a href="">
+              <a href="blog2.php">
                 Read More
               </a>
             </div>
@@ -411,7 +363,7 @@ a:focus {
               <p>
                  Le site est très intuitif et agréable à utiliser. J'ai trouvé facilement les équipements dont j'avais besoin, mais j'aurais aimé avoir plus d'informations sur certaines spécifications des produits. Par exemple, des vidéos explicatives ou des avis d'autres clients pourraient être utiles.
               </p>
-              <a href="blog.php">
+              <a href="blog2.php">
                 Read More
               </a>
             </div>
@@ -553,10 +505,10 @@ a:focus {
               Menu
             </h4>
             <div class="info_links_menu">
-              <a href="index.php">Home</a>
-              <a href="about.php">About</a>
-              <a href="shop.php">Shop</a>
-              <a href="blog.php">Blog</a>
+              <a href="index2.php">Home</a>
+              <a href="about2.php">About</a>
+              <a href="shop2.php">Shop</a>
+              <a href="blog2.php">Blog</a>
             </div>
           </div>
         </div>
@@ -643,7 +595,6 @@ a:focus {
   <script src="js/bootstrap.js"></script>
   <!-- custom js -->
   <script src="js/custom.js"></script>
-
 
 </body>
 
